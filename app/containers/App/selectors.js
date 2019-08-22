@@ -38,7 +38,11 @@ const makeSelectLocation = () =>
     selectRouter,
     routerState => routerState.location,
   );
-
+const makeSelectIsAuthenticated = () =>
+  createSelector(
+    selectGlobal,
+    globalState => globalState.isAuthenticated,
+  );
 export {
   selectGlobal,
   makeSelectCurrentUser,
@@ -46,4 +50,5 @@ export {
   makeSelectError,
   makeSelectRepos,
   makeSelectLocation,
+  makeSelectIsAuthenticated,
 };
